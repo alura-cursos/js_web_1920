@@ -9,12 +9,12 @@ export const criaData = (data) => {
 
     dataTopo.innerHTML = conteudo
 
-    tarefas.forEach((tarefa => { 
+    tarefas.forEach(((tarefa, id) => { 
         const dia = moment(tarefa.dataFormatada, 'DD/MM/YYYY')
 
         const diff = dataMoment.diff(dia)
         if(diff === 0){
-            dataTopo.appendChild(Tarefa(tarefa))
+            dataTopo.appendChild(Tarefa(tarefa, id))
         }
         
     }))
